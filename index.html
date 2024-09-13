@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Список студентов</title>
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <section id="main_section" class="mb-3 studentForm">
+      <form class="row g-3">
+        <div class="col-md-6 name">
+          <label for="inputName" class="form-label">Имя</label>
+          <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="col-md-6 surname">
+          <label for="inputSurname" class="form-label">Фамилия</label>
+          <input type="text" class="form-control" id="inputSurname">
+        </div>
+        <div class="col-md-6 middleName">
+          <label for="inputMiddleName" class="form-label">Отчество</label>
+          <input type="text" class="form-control" id="inputMiddleName">
+        </div>
+        <div class="col-3 dateOfBirth">
+          <label for="inputDateOfBirth" class="form-label">Дата рождения</label>
+          <input type="date" class="form-control" id="inputDateOfBirth">
+        </div>
+        <div class="col-3 dateOfStart">
+          <label for="inputDateOfStart" class="form-label">Год начала обучения</label>
+          <input type="number" class="form-control" id="inputDateOfStart">
+        </div>
+        <div class="col-12 faculty">
+          <label for="inputFaculty" class="form-label">Факультет</label>
+          <input type="text" class="form-control" id="inputFaculty">
+        </div>
+        <div id="errorText_Div" class="errorTextDiv">
+          <p id="error_Text" class="errorText"> Не все поля заполнены, или неправильно указана дата</p>
+        </div>
+        <div class="col-12 submit-btn">
+          <button type="submit" class="btn btn-primary" id="submit-button">Добавить студента</button>
+        </div>
+      </form>
+      <button id="filter-btn" type="submit" class="filter-btn btn btn-dark ">Фильтры</button>
+    </section>
+    <section>
+      <form id="filter-form" class="filter">
+        <table>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">ФИО</span>
+            <input id="filter-form__fio" type="text" class="col-md-3 form-control" placeholder="Афанасьев"
+              aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Факультет</span>
+            <input id="filter-form__faculty" type="text" class="col-md-3 form-control" placeholder="Реклама и СО"
+              aria-describedby="addon-wrapping">
+          </div>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Год начала обучения</span>
+            <input id="filter-form__start" type="text" class="col-md-1 form-control" placeholder="2020"
+              aria-describedby="addon-wrapping">
+          </div>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Год окончания обучения</span>
+            <input id="filter-form__end" type="text" class="col-md-1 form-control" placeholder="2024"
+              aria-describedby="addon-wrapping">
+          </div>
+        </table>
+      </form>
+      <table class="table studentsTable" id="students-table">
+        <thead>
+          <tr>
+            <th class="column-header" id="number" data-colum="number">#</th>
+            <th class="column-header" id="fio" data-colum="fio">ФИО</th>
+            <th class="column-header" id="faculty" data-colum="faculty">Факультет</th>
+            <th class="column-header" id="birthDate" data-colum="birthDate">Дата рождения</th>
+            <th class="column-header" id="startYear" data-colum="startYear">Годы обучения</th>
+          </tr>
+        </thead>
+        <tbody id="students-list">
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+
+</html>
